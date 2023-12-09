@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwhjsb26ksxcg"]
+[gd_scene load_steps=10 format=3 uid="uid://cwhjsb26ksxcg"]
 
 [ext_resource type="Texture2D" uid="uid://dn27tbpi1y68w" path="res://assets/art/tilemaps/squirrel.png" id="1_ariqd"]
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_pmk2m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bfw2ryfban8q5" path="res://src/player/states/move.tscn" id="5_5yp6d"]
 [ext_resource type="PackedScene" uid="uid://bncfm42uy2a7x" path="res://src/player/states/fall.tscn" id="6_55qg0"]
 [ext_resource type="PackedScene" uid="uid://crhovib0hwauj" path="res://src/player/states/jump.tscn" id="7_ltlg0"]
+[ext_resource type="Texture2D" uid="uid://dpiycx2ti02fs" path="res://assets/art/masks/2d_lights_and_shadows_neutral_point_light.webp" id="8_1a0jj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_465us"]
 size = Vector2(6, 7)
@@ -42,3 +43,7 @@ offset_top = -31.0
 offset_right = 21.0
 offset_bottom = -8.0
 text = "poop"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+shadow_enabled = true
+texture = ExtResource("8_1a0jj")
