@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqkdle1dvi0aq"]
+[gd_scene load_steps=7 format=3 uid="uid://cqkdle1dvi0aq"]
 
-
-[ext_resource type="PackedScene" uid="uid://cwhjsb26ksxcg" path="res://src/player/player.tscn" id="1_lavvk"]
 [ext_resource type="TileSet" uid="uid://d15wkoonmepbe" path="res://src/resources/tile_set_1.tres" id="1_pitrg"]
+[ext_resource type="PackedScene" uid="uid://cwhjsb26ksxcg" path="res://src/player/player.tscn" id="3_08iye"]
 [ext_resource type="PackedScene" uid="uid://bppeaqnbvnq6c" path="res://src/enemy/enemy.tscn" id="3_yrutd"]
 
 [sub_resource type="Gradient" id="Gradient_dbcev"]
@@ -31,3 +30,6 @@ layer_0/tile_data = PackedInt32Array(1376256, 1507328, 7, 1376257, 1572864, 3, 1
 
 [node name="Enemy" parent="." instance=ExtResource("3_yrutd")]
 position = Vector2(152, 160)
+
+[node name="Player" parent="." instance=ExtResource("3_08iye")]
+position = Vector2(125, 160)
