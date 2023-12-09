@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwhjsb26ksxcg"]
+[gd_scene load_steps=9 format=3 uid="uid://cwhjsb26ksxcg"]
 
 [ext_resource type="Texture2D" uid="uid://dn27tbpi1y68w" path="res://assets/art/tilemaps/squirrel.png" id="1_ariqd"]
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_pmk2m"]
+[ext_resource type="Script" path="res://src/player/States.gd" id="3_kt0fo"]
+[ext_resource type="PackedScene" uid="uid://cxg74wixbvkh2" path="res://src/player/states/idle.tscn" id="4_qgkvu"]
+[ext_resource type="PackedScene" uid="uid://bfw2ryfban8q5" path="res://src/player/states/move.tscn" id="5_5yp6d"]
+[ext_resource type="PackedScene" uid="uid://bncfm42uy2a7x" path="res://src/player/states/fall.tscn" id="6_55qg0"]
+[ext_resource type="PackedScene" uid="uid://crhovib0hwauj" path="res://src/player/states/jump.tscn" id="7_ltlg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_465us"]
-size = Vector2(8, 8)
+size = Vector2(6, 7)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_pmk2m")
@@ -15,6 +20,25 @@ region_enabled = true
 region_rect = Rect2(80, 24, 8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_465us")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="States" type="Node" parent="."]
+script = ExtResource("3_kt0fo")
+
+[node name="IDLE" parent="States" instance=ExtResource("4_qgkvu")]
+
+[node name="MOVE" parent="States" instance=ExtResource("5_5yp6d")]
+
+[node name="FALL" parent="States" instance=ExtResource("6_55qg0")]
+
+[node name="JUMP" parent="States" instance=ExtResource("7_ltlg0")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -31.0
+offset_right = 21.0
+offset_bottom = -8.0
+text = "poop"
