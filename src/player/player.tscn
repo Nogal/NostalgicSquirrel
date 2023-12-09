@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwhjsb26ksxcg"]
+
+[ext_resource type="Texture2D" uid="uid://dn27tbpi1y68w" path="res://assets/art/tilemaps/squirrel.png" id="1_ariqd"]
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_pmk2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_465us"]
+size = Vector2(8, 8)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_pmk2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ariqd")
+region_enabled = true
+region_rect = Rect2(80, 24, 8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_465us")
+
+[node name="Camera2D" type="Camera2D" parent="."]
