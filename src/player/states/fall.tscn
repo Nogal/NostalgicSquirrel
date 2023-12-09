@@ -8,3 +8,6 @@ script = ExtResource("1_a3ice")
 [node name="CoyoteTime" type="Timer" parent="."]
 
 [node name="JumpBuffer" type="Timer" parent="."]
+
+[connection signal="timeout" from="CoyoteTime" to="." method="_on_coyote_time_timeout"]
+[connection signal="timeout" from="JumpBuffer" to="." method="_on_jump_buffer_timeout"]
